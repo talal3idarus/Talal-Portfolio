@@ -1,0 +1,26 @@
+.flower-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: visible;
+}
+
+.flower {
+  will-change: transform;
+  transform-origin: center;
+}
+
+.flower path {
+  transition: stroke 0.3s ease;
+}
+
+.flower:hover path {
+  stroke: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .flower-container {
+    width: 150px;
+    height: 150px;
+  }
+}

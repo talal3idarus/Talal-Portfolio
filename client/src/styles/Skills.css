@@ -1,0 +1,195 @@
+.skills-container {
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #008080; /* Teal primary color */
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #666;
+  font-style: italic;
+}
+
+.skills-bubble-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.category-bubble-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  perspective: 1000px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-bubble {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #008080, #006666); /* Teal gradient */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 128, 128, 0.3); /* Teal shadow */
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.bubble-content {
+  text-align: center;
+  color: #FFFFFF; /* White text */
+}
+
+.category-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.category-bubble h3 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.skills-orbit {
+  position: absolute;
+  top: -25px;
+  left: -35px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  transform-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-bubble {
+  position: absolute;
+  background-color: #FFFFFF; /* White background */
+  border: 2px solid #008080; /* Teal border */
+  padding: 12px 16px; /* Increased padding */
+  border-radius: 25px; /* Larger border radius */
+  font-size: 0.9rem; /* Increased font size */
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 128, 128, 0.15); /* Teal shadow */
+  white-space: nowrap;
+  z-index: 1;
+  min-width: 90px; /* Ensure minimum width */
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #008080; /* Teal text */
+  font-size: 1rem; /* Increased font size */
+}
+
+.skill-percentage {
+  font-size: 0.8rem; /* Slightly increased font size */
+  color: #D2B49C; /* Warm Taupe */
+  margin-top: 3px; /* Add space between name and percentage */
+}
+
+/* Add alternating colors for skill bubbles */
+.skill-bubble:nth-child(odd) {
+  color: #006666; /* Warm Taupe */
+}
+
+.skill-bubble:nth-child(odd) .skill-name {
+  color: #006666; /* Darker Teal */
+}
+
+/* Hover effect for category bubbles */
+.category-bubble:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 128, 128, 0.4); /* Enhanced Teal shadow */
+  background: linear-gradient(145deg, #009999, #007070); /* Brighter Teal gradient */
+}
+
+/* Add fade effect for non-hovered categories */
+.skills-bubble-container:hover .category-bubble-wrapper {
+  opacity: 0.4;
+  transform: scale(0.95);
+}
+
+.skills-bubble-container .category-bubble-wrapper:hover {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 20;
+}
+
+/* Additional styles for fade effect */
+.skills-bubble-container.category-hovered {
+  pointer-events: none; /* This allows clicking through the container to the bubbles */
+}
+
+.skills-bubble-container.category-hovered .category-bubble-wrapper {
+  pointer-events: auto; /* Re-enable pointer events for the bubbles */
+}
+
+.category-bubble-wrapper.active {
+  z-index: 30;
+}
+
+/* Make the orbit skills more prominent when category is hovered */
+.category-bubble-wrapper.active .skills-orbit {
+  z-index: 25;
+}
+
+/* Improve the transition for smoother effect */
+.category-bubble-wrapper {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.skills-bubble-container:hover .category-bubble-wrapper:not(:hover) {
+  opacity: 0.3;
+  transform: scale(0.9);
+  filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  .skills-bubble-container {
+    gap: 2rem;
+  }
+  
+  .category-bubble-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .skill-bubble {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+}

@@ -1,0 +1,81 @@
+.project-card {
+  background-color: var(--card-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-left: 4px solid var(--primary-color);
+  will-change: transform, height, opacity;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.project-header h3 {
+  margin: 0;
+}
+
+.arrow-icon {
+  display: inline-block;
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.project-details {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  overflow: hidden;
+  will-change: height;
+}
+
+.features, .future-updates {
+  margin-top: 1rem;
+}
+
+.features h4, .future-updates h4 {
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.features ul, .future-updates ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+.features li, .future-updates li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+.features li::before, .future-updates li::before {
+  content: "•";
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: -1.2rem;
+}
+
+.future-updates li::before {
+  color: var(--secondary-color);
+}
+
+.project-card.expanded {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: 1.25rem;
+  }
+}
