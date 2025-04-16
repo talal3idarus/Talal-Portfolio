@@ -4,6 +4,8 @@
   background-color: var(--background-color);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .profile-container {
@@ -90,7 +92,7 @@
 }
 
 .info-value {
-  color: var(--text-color);
+  color: var(--text-color) !important;
 }
 
 .profile-bio {
@@ -255,6 +257,14 @@
     flex-direction: column;
     gap: 3rem;
     text-align: center;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .profile-section {
+    padding: 3rem 1rem;
+    display: flex;
+    justify-content: center;
   }
   
   .profile-info h2::after {
@@ -264,10 +274,13 @@
   
   .info-item {
     justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
   }
   
   .info-label {
     flex: 0 0 auto;
+    margin-bottom: 0.25rem;
   }
   
   .profile-image-container {
@@ -276,9 +289,18 @@
 }
 
 @media (max-width: 768px) {
+  .profile-section {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
   .profile-container {
     flex-direction: column;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
   }
   
   .profile-image-container {
@@ -289,6 +311,12 @@
   
   .info-item {
     justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .info-grid {
+    margin-bottom: 1.5rem;
   }
   
   .profile-cta {
@@ -297,6 +325,17 @@
 }
 
 @media (max-width: 480px) {
+  .profile-section {
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profile-container {
+    padding: 0;
+    width: 100%;
+  }
+  
   .profile-image-container {
     flex: 0 0 220px;
     border-radius: 50%; /* Maintain circular shape at smaller sizes */
@@ -307,5 +346,16 @@
   
   .profile-info h2 {
     font-size: 1.75rem;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .info-label {
+    margin-right: 0;
+    margin-bottom: 0.2rem;
   }
 }

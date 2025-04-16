@@ -6,8 +6,7 @@ import profilePicture from "../assets/Profile_picture.JPEG";
 const ProfileSection = () => {
   const personalInfo = {
     name: "Talal Ahmed Al Aidarus",
-    location: "Oman, muscat, 3913 Al Khuwair South, Muscat",
-    dob: "13-Aug-2000"
+    location: "Oman, muscat, Al Khuwair South",
   };
 
   return (
@@ -60,11 +59,6 @@ const ProfileSection = () => {
             <div className="info-item">
               <span className="info-label">Location:</span>
               <span className="info-value">{personalInfo.location}</span>
-            </div>
-            
-            <div className="info-item">
-              <span className="info-label">Date of Birth:</span>
-              <span className="info-value">{personalInfo.dob}</span>
             </div>
           </div>
           

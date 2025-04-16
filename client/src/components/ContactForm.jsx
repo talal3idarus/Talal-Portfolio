@@ -63,7 +63,7 @@ const ContactForm = () => {
               <span className="icon">✉️</span>
               <span>talalaidarus@gmail.com</span>
             </a>
-            <a href="www.linkedin.com/in/talal-al-aidarus-962a60276" target="_blank" rel="noopener noreferrer" className="contact-link">
+            <a href="https://om.linkedin.com/in/talal-al-aidarus-962a60276" target="_blank" rel="noopener noreferrer" className="contact-link">
               <span className="icon">💼</span>
               <span>LinkedIn</span>
             </a>

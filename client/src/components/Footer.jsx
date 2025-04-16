@@ -28,8 +28,8 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Connect</h4>
             <ul>
+              <li><a href="https://om.linkedin.com/in/talal-al-aidarus-962a60276" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               <li><a href="https://github.com/talal3idarus" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-              <li><a href="www.linkedin.com/in/talal-al-aidarus-962a60276" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               <li><a href="mailto:talalaidarus@gmail.com">Email</a></li>
             </ul>
           </div>
