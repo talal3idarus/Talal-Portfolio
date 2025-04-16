@@ -178,6 +178,90 @@
   filter: blur(2px);
 }
 
+/* Large screens/small laptops */
+@media (max-width: 992px) {
+  .skills-bubble-container {
+    gap: 2.5rem;
+  }
+  
+  .category-bubble-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .skill-bubble {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Tablets and large phones */
+@media (max-width: 768px) {
+  .skills-bubble-container {
+    gap: 2rem;
+  }
+  
+  .category-bubble-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .skill-bubble {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .skills-container {
+    padding: 3rem 1rem;
+  }
+  
+  .skills-bubble-container {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .category-bubble-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .category-icon {
+    font-size: 1.5rem;
+  }
+  
+  .category-bubble h3 {
+    font-size: 0.85rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 320px) {
+  .category-bubble-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .skills-bubble-container {
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .skills-bubble-container {
     gap: 2rem;

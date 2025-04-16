@@ -2,56 +2,65 @@ const collaborators = [
   {
     id: 1,
     name: "Yahya Thani AL-Wahaibi",
-    role: "Collaborator",
-    image: "/images/collaborators/yahya.jpg"
-  },{
-    id: 8,
-    name: "Fahad Masoud Al-Maani",
     role: "Developer",
-    image: "/images/collaborators/abdulaziz.jpg"
-  }
-  ,{
-    id: 4,
-    name: "Al Aiham Ahmed Khalfan Al-Rahbi",
-    role: "Developer",
-    image: "/images/collaborators/al-aiham.jpg"
+    image: "/images/collaborators/yahya.jpg",
+    projectIds: [3], 
+    achievementIds: [3, 4,6] 
   },{
     id: 2,
+    name: "Fahad Masoud Al-Maani",
+    role: "Developer",
+    image: "/images/collaborators/abdulaziz.jpg",
+    projectIds: [1,2], 
+    achievementIds: [2,4,5,6]
+  }
+  ,{
+    id: 3,
+    name: "Al Aiham Ahmed Khalfan Al-Rahbi",
+    role: "Developer",
+    image: "/images/collaborators/al-aiham.jpg",
+    projectIds: [4], 
+    achievementIds: [1,2,5,6] 
+  },{
+    id: 4,
     name: "Al Waleed Ahmed Abdullah Al-Abdali",
     role: "Developer",
-    image: "/images/collaborators/al-waleed.jpg"
-  },
-  
-  {
-    id: 6,
-    name: "Majid Ahmed Said Al-Ghamari",
-    role: "Collaborator",
-    image: "/images/collaborators/majid.jpg"
-  },
-  {
-    id: 7,
-    name: "Nasser Mohamed Ahmed Al-Habsi",
-    role: "Collaborator",
-    image: "/images/collaborators/nasser.jpg"
-  },
-  {
-    id: 3,
-    name: "Dr. Aisha Nasser Al-Salmi",
-    role: "Mentor",
-    image: "/images/collaborators/aisha.jpg"
+    image: "/images/collaborators/al-waleed.jpg",
+    projectIds: [2], 
+    achievementIds: [1] 
   },
   
   {
     id: 5,
-    name: "Ali Hamed Alwahaibi",
-    role: "Collaborator",
-    image: "/images/collaborators/ali.jpg"
+    name: "Majid Ahmed Said Al-Ghamari",
+    role: "Developer",
+    image: "/images/collaborators/majid.jpg",
+    projectIds: [2],
+    achievementIds: [1,5,6] 
   },
   {
-    id: 9,
+    id: 6,
+    name: "Nasser Mohamed Ahmed Al-Habsi",
+    role: "Developer",
+    image: "/images/collaborators/nasser.jpg",
+    projectIds: [],
+    achievementIds: [1,2,4,5,6] 
+  },
+  {
+    id: 7,
+    name: "Dr. Aisha Nasser Al-Salmi",
+    role: "Mentor",
+    image: "/images/collaborators/aisha.jpg",
+    projectIds: [3],
+    achievementIds: [3] 
+  },
+  {
+    id: 8,
     name: "Lujain Ali Al-Abri",
     role: "Collaborator / Designer",
-    image: "/images/collaborators/abdulrahman.jpg"
+    image: "/images/collaborators/abdulrahman.jpg",
+    projectIds: [2],
+    achievementIds: [] 
   }
 ];
 

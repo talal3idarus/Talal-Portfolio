@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../styles/ProjectCard.css";
 
-const ProjectCard = ({ project }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  
+const ProjectCard = ({ project, isExpanded, toggleProject }) => {
   return (
     <motion.div 
       className={`project-card ${isExpanded ? "expanded" : ""}`}
@@ -16,7 +14,7 @@ const ProjectCard = ({ project }) => {
     >
       <motion.div 
         className="project-header"
-        onClick={() => setIsExpanded(!isExpanded)}
+        onClick={toggleProject}
         whileHover={{ scale: 1.02 }}
       >
         <h3>{project.title}</h3>
@@ -40,6 +38,30 @@ const ProjectCard = ({ project }) => {
           >
             <p>{project.description}</p>
             
+            {project.abstract && (
+              <div className="abstract">
+                <p><strong>Abstract:</strong> {project.abstract}</p>
+              </div>
+            )}
+            
+            {project.objectives && (
+              <div className="features">
+                <h4>Objectives:</h4>
+                <motion.ul>
+                  {project.objectives.map((objective, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.3 }}
+                    >
+                      {objective}
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </div>
+            )}
+            
             <div className="features">
               <h4>Key Features:</h4>
               <motion.ul>
@@ -56,6 +78,24 @@ const ProjectCard = ({ project }) => {
               </motion.ul>
             </div>
             
+            {project.predictedOutcomes && (
+              <div className="features">
+                <h4>Predicted Outcomes:</h4>
+                <motion.ul>
+                  {project.predictedOutcomes.map((outcome, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.3 }}
+                    >
+                      {outcome}
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </div>
+            )}
+            
             {project.futureUpdates && (
               <div className="future-updates">
                 <h4>Future Updates:</h4>
@@ -71,6 +111,13 @@ const ProjectCard = ({ project }) => {
                     </motion.li>
                   ))}
                 </motion.ul>
+              </div>
+            )}
+            
+            {project.omaniContext && (
+              <div className="omani-context">
+                <h4>Omani Context:</h4>
+                <p>{project.omaniContext}</p>
               </div>
             )}
           </motion.div>

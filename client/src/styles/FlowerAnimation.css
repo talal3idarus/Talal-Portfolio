@@ -18,9 +18,30 @@
   stroke: var(--secondary-color);
 }
 
+@media (max-width: 992px) {
+  .flower-container {
+    width: 180px;
+    height: 180px;
+  }
+}
+
 @media (max-width: 768px) {
   .flower-container {
     width: 150px;
     height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flower-container {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 320px) {
+  .flower-container {
+    width: 100px;
+    height: 100px;
   }
 }

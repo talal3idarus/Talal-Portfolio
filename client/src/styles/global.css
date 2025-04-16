@@ -8,6 +8,13 @@
   --text-light: #6b7280; /* Lighter text color */
   --border-radius: 12px;
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  /* Breakpoints for responsive design */
+  --breakpoint-xs: 320px;  /* Extra small devices */
+  --breakpoint-sm: 480px;  /* Small devices/phones */
+  --breakpoint-md: 768px;  /* Medium devices/tablets */
+  --breakpoint-lg: 992px;  /* Large devices/laptops */
+  --breakpoint-xl: 1200px; /* Extra large devices/desktops */
 }
 
 @media (prefers-reduced-motion) {

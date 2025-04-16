@@ -21,6 +21,40 @@
   padding: 2rem;
   box-shadow: var(--shadow);
   border-left: 4px solid var(--secondary-color);
+  position: relative;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.volunteer-card.expanded {
+  grid-column: 1 / -1;
+}
+
+.volunteer-expanded-content {
+  overflow: hidden;
+  margin-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
+.expand-indicator {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .volunteer-card h3 {
@@ -66,6 +100,62 @@
   z-index: -1;
 }
 
+.volunteer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.volunteer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.volunteer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.volunteer-details {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.volunteer-highlight {
+  display: flex;
+  align-items: baseline;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #8e9aaf;
+  min-width: 100px;
+  margin-right: 10px;
+}
+
+.info-value {
+  color: #ffffff;
+}
+
+/* Large screens/small laptops */
+@media (max-width: 992px) {
+  .volunteer-section {
+    padding: 5rem 0;
+  }
+  
+  .volunteer-card {
+    padding: 1.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .volunteer-card {
     padding: 1.5rem;
@@ -77,8 +167,35 @@
 }
 
 @media (max-width: 480px) {
+  .volunteer-section {
+    padding: 4rem 0;
+  }
+  
+  .volunteer-card {
+    padding: 1.25rem;
+  }
+  
   .volunteer-details {
     flex-direction: column;
     gap: 1.25rem;
+  }
+  
+  .volunteer-card h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 320px) {
+  .volunteer-section {
+    padding: 3rem 0;
+  }
+  
+  .volunteer-card {
+    padding: 1.1rem;
+  }
+  
+  .volunteer-card h3 {
+    font-size: 1.15rem;
   }
 }

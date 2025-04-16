@@ -132,3 +132,70 @@
     padding: 1.5rem;
   }
 }
+
+/* Large screens/small laptops */
+@media (max-width: 992px) {
+  .contact-container {
+    gap: 2.5rem;
+  }
+  
+  .contact-info, .contact-form {
+    padding: 1.8rem;
+  }
+}
+
+/* Tablets and large phones */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-info, .contact-form {
+    padding: 1.5rem;
+  }
+  
+  .contact-section {
+    padding: 4rem 0;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 3rem 0;
+  }
+  
+  .contact-info, .contact-form {
+    padding: 1.25rem;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+  
+  .submit-button {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 320px) {
+  .contact-section {
+    padding: 2.5rem 0;
+  }
+  
+  .contact-info, .contact-form {
+    padding: 1.1rem;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.35rem;
+  }
+}

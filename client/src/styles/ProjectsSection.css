@@ -29,3 +29,52 @@
   border-radius: 50%;
   z-index: -1;
 }
+
+/* Large screens/small laptops */
+@media (max-width: 992px) {
+  .projects-section {
+    padding: 3.5rem 0;
+  }
+}
+
+/* Tablets and large phones */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 0;
+  }
+  
+  .projects-container {
+    margin-bottom: 2rem;
+  }
+  
+  .more-projects p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 2.5rem 0;
+  }
+  
+  .projects-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .more-projects {
+    margin-top: 2rem;
+  }
+  
+  .more-projects p {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 320px) {
+  .projects-section {
+    padding: 2rem 0;
+  }
+}

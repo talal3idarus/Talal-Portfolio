@@ -11,56 +11,58 @@ const Skills = () => {
       category: "Programming Languages",
       icon: <FaCode />,
       skills: [
-        { name: "C++", proficiency: 90 },
-        { name: "Java", proficiency: 85 },
-        { name: "JavaScript", proficiency: 92 },
-        { name: "Python", proficiency: 88 },
-        { name: "PHP", proficiency: 80 },
-        { name: "HTML5", proficiency: 95 },
-        { name: "CSS", proficiency: 90 },
-        { name: "Dart", proficiency: 75 },
-        { name: "SQL", proficiency: 85 }
+        { name: "C++" },
+        { name: "Java" },
+        { name: "JavaScript" },
+        { name: "Python" },
+        { name: "PHP" },
+        { name: "HTML5" },
+        { name: "CSS" },
+        { name: "Dart" },
+        { name: "SQL" }
       ]
     },
     {
       category: "Frameworks & Libraries",
       icon: <FaServer />,
       skills: [
-        { name: "React", proficiency: 88 },
-        { name: "Flutter", proficiency: 82 }
+        { name: "React" },
+        { name: "Flutter" },
+        { name: "Express.js" },
+        { name: "Bootstrap" },
       ]
     },
     {
       category: "Tools & Technologies",
       icon: <FaTools />,
       skills: [
-        { name: "Node.js", proficiency: 85 },
-        { name: "Firebase", proficiency: 80 },
-        { name: "MongoDB", proficiency: 78 },
-        { name: "Apache", proficiency: 75 },
-        { name: "GitHub", proficiency: 90 },
-        { name: "CISCO", proficiency: 70 }
+        { name: "Node.js" },
+        { name: "Firebase" },
+        { name: "MongoDB" },
+        { name: "Apache" },
+        { name: "GitHub" },
+        { name: "CISCO" }
       ]
     },
     {
       category: "Data Analysis & ML",
       icon: <FaChartBar />,
       skills: [
-        { name: "Pandas", proficiency: 80 },
-        { name: "NumPy", proficiency: 82 },
-        { name: "Plotly", proficiency: 75 },
-        { name: "Scikit-Learn", proficiency: 78 },
-        { name: "Matplotlib", proficiency: 80 }
+        { name: "Pandas" },
+        { name: "NumPy" },
+        { name: "Plotly" },
+        { name: "Scikit-Learn" },
+        { name: "Matplotlib" }
       ]
     },
     {
       category: "Design Tools",
       icon: <FaPalette />,
       skills: [
-        { name: "Figma", proficiency: 85 },
-        { name: "Inkscape", proficiency: 75 },
-        { name: "Canva", proficiency: 90 },
-        { name: "GIMP", proficiency: 78 }
+        { name: "Figma" },
+        { name: "Inkscape" },
+        { name: "Canva" },
+        { name: "GIMP" }
       ]
     }
   ];
@@ -130,7 +132,6 @@ const Skills = () => {
                       transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
                     >
                       <span className="skill-name">{skill.name}</span>
-                      <span className="skill-percentage">{skill.proficiency}%</span>
                     </motion.div>
                   );
                 })}

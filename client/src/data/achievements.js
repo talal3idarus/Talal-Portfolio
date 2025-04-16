@@ -29,6 +29,12 @@ const achievements = [
     description: "Achieved top 3 finish at the Dhofar Competitive Programming Competition (DCPC) 2024 with Team Hash Arsenal",
     color: "#8B5CF6",
   },
+  {
+    id: 6,
+    title: "MCBC 2023 Coding Competition",
+    description: "Won top 4 in the Modern College of Business and Science (MCBC) Coding Competition",
+    color: "#3B82F6",
+  },
 ];
 
 export default achievements;

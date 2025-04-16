@@ -7,6 +7,8 @@ import "../styles/AchievementsSection.css";
 const AchievementsSection = () => {
   const [activeId, setActiveId] = useState(null);
 
+  // Toggle function: if the clicked card is already active, close it (set to null)
+  // otherwise, open the clicked card (set its id as active)
   const toggleActive = (id) => {
     setActiveId(activeId === id ? null : id);
   };
