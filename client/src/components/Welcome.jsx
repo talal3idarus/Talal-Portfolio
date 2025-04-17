@@ -44,7 +44,7 @@ const Welcome = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <div className="background-pattern"></div>
+      <div className="background-oval"></div>
       
       <motion.div 
         className="welcome-content"

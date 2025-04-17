@@ -2,6 +2,7 @@
   padding: 4rem 0;
   position: relative;
   width: 100%;
+  min-height: 50vh;
 }
 
 .achievements-grid {

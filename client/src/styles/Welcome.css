@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-color);
+  background-color: var(--background-color); /* Restore this */
   color: var(--text-color);
   position: relative;
   overflow: hidden;
@@ -69,10 +69,28 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /* background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.03) 0%, transparent 10%); */
   background-size: 25px 25px;
   opacity: 0.4;
   z-index: 1;
+}
+
+.background-oval {
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Changed colors to match your theme using CSS variables */
+  background: radial-gradient(
+    ellipse, 
+    rgba(var(--primary-color-rgb, 64, 96, 255), 0.18), 
+    rgba(var(--secondary-color-rgb, 112, 48, 160), 0.06)
+  );
+  border-radius: 50% / 70%;
+  filter: blur(40px);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .accent-circles {
@@ -144,6 +162,12 @@
   .subtitle {
     font-size: clamp(1rem, 2.5vw, 1.5rem);
   }
+  
+  .background-oval {
+    width: 90%;
+    height: 65%;
+    filter: blur(30px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -174,6 +198,12 @@
   
   .scroll-indicator {
     bottom: 20px;
+  }
+  
+  .background-oval {
+    width: 95%;
+    height: 60%;
+    filter: blur(20px);
   }
 }
 

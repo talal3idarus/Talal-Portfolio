@@ -78,22 +78,12 @@ const ProfileSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "10px",
-              "@media (max-width: 768px)": {
-                flexDirection: "column",
-                width: "100%"
-              }
-            }}
           >
             <motion.a 
               href="#achievements" 
               className="button primary-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              style={{ width: "100%" }}
             >
               View Achievements
             </motion.a>
@@ -102,7 +92,6 @@ const ProfileSection = () => {
               className="button primary-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              style={{ width: "100%" }}
             >
               View Projects
             </motion.a>
@@ -111,7 +100,6 @@ const ProfileSection = () => {
               className="button secondary-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              style={{ width: "100%" }}
             >
               Contact Me
             </motion.a>
