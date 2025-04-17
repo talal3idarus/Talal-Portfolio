@@ -1,6 +1,7 @@
 .achievements-section {
   padding: 4rem 0;
   position: relative;
+  width: 100%;
 }
 
 .achievements-grid {
@@ -8,6 +9,11 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   will-change: opacity;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
 .achievements-section::before {
@@ -39,6 +45,7 @@
   .achievements-grid {
     grid-template-columns: 1fr;
     gap: 1.2rem;
+    padding: 0 1rem;
   }
   
   .achievements-section {
@@ -54,6 +61,7 @@
   
   .achievements-grid {
     gap: 1rem;
+    padding: 0 0.8rem;
   }
 }
 

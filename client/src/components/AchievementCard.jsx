@@ -2,8 +2,19 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../styles/AchievementCard.css";
 
-const AchievementCard = ({ title, description, color, isActive, onClick }) => {
+const AchievementCard = ({ title, description, color, isActive: propIsActive, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isLocalActive, setIsLocalActive] = useState(false);
+  
+  // Use either the prop-controlled active state or local state
+  const isActive = propIsActive !== undefined ? propIsActive : isLocalActive;
+  
+  const handleClick = () => {
+    // Toggle local active state
+    setIsLocalActive(!isLocalActive);
+    // Call the original onClick if provided
+    if (onClick) onClick();
+  };
   
   return (
     <motion.div
@@ -27,7 +38,7 @@ const AchievementCard = ({ title, description, color, isActive, onClick }) => {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={onClick} // Keeping click functionality as backup
+      onClick={handleClick}
       whileTap={{ scale: 0.98 }}
     >
       <motion.h3
@@ -39,7 +50,7 @@ const AchievementCard = ({ title, description, color, isActive, onClick }) => {
       </motion.h3>
       
       <AnimatePresence>
-        {(isActive || isHovered) && (
+        {isActive && (
           <motion.div 
             className="card-content"
             initial={{ opacity: 0, height: 0 }}

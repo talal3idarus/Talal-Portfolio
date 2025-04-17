@@ -240,6 +240,12 @@
   margin-top: 1rem;
 }
 
+.profile-cta {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .profile-section::before {
   content: '';
   position: absolute;
@@ -321,6 +327,16 @@
   
   .profile-cta {
     justify-content: center;
+  }
+
+  .profile-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .profile-cta .button {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
 

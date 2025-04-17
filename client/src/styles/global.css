@@ -43,13 +43,15 @@ body {
 
 .app {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 section {
   margin: 6rem 0;
+  width: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -127,6 +129,7 @@ button:hover, .button:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -140,6 +143,7 @@ button:hover, .button:hover {
   
   .container {
     padding: 0 1rem;
+    width: 100%;
   }
 }
 
@@ -150,6 +154,10 @@ button:hover, .button:hover {
   
   section {
     margin: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 0.8rem;
   }
 }
 

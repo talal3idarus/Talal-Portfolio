@@ -21,10 +21,13 @@ const Navigation = () => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: "smooth"
-      });
+      // Add a small delay for mobile devices to ensure menu closes first
+      setTimeout(() => {
+        window.scrollTo({
+          top: element.offsetTop - 80,
+          behavior: "smooth"
+        });
+      }, 100);
       setIsMobileMenuOpen(false);
     }
   };
@@ -52,7 +55,7 @@ const Navigation = () => {
           className="logo"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => scrollToSection("hero")}
+          onClick={() => scrollToSection("welcome")}
         >
           <span>Talal Al-Aidarus</span>
         </motion.div>
