@@ -35,6 +35,12 @@ const achievements = [
     description: "Won top 4 in the Modern College of Business and Science (MCBC) Coding Competition",
     color: "#3B82F6",
   },
+  {
+    id: 7,
+    title: "Best Paper Award – IEEE Conference 2025 (Penang, Malaysia)",
+    description: "Awarded for the research project 'A Trustworthy AI-Driven Clustering Approach for Formative Feedback and Evaluation of Student Code'",
+    color: "#E91E63",
+  },
 ];
 
 export default achievements;

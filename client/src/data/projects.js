@@ -98,6 +98,31 @@ const projects = [
     ],
     color: "#FF8C00",
     image: "/images/original-prices.jpg"
+  },
+  {
+    id: 5,
+    title: "AI-Driven Student Code Clustering & Feedback System",
+    description: "IEEE-Presented Research Project | Role: Developer & Researcher. Built a system that uses unsupervised clustering and AST analysis to evaluate SQL code submissions.",
+    features: [
+      "Unsupervised clustering algorithms for code analysis",
+      "Abstract Syntax Tree (AST) analysis",
+      "AI-based partial scoring system",
+      "Automated feedback generation",
+      "Fairness auditing mechanisms",
+      "SQL code submission evaluation",
+      "Trustworthy AI implementation",
+      "Academic grading automation"
+    ],
+    futureUpdates: [
+      "Support for additional programming languages",
+      "Enhanced clustering algorithms",
+      "Real-time feedback delivery",
+      "Integration with learning management systems"
+    ],
+    color: "#9C27B0",
+    image: "/images/ai-clustering-system.jpg",
+    achievements: "Resulted in 60–80% reduction in grading time. Published at IEEE 2025.",
+    publication: "IEEE Conference 2025 - Penang, Malaysia"
   }
 ];
 

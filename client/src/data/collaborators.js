@@ -4,8 +4,8 @@ const collaborators = [
     name: "Yahya Thani AL-Wahaibi",
     role: "Developer",
     image: "/images/collaborators/yahya.jpg",
-    projectIds: [3], 
-    achievementIds: [3, 4,6] 
+    projectIds: [3, 5], 
+    achievementIds: [3, 4, 6, 7] 
   },{
     id: 2,
     name: "Fahad Masoud Al-Maani",
@@ -51,8 +51,8 @@ const collaborators = [
     name: "Dr. Aisha Nasser Al-Salmi",
     role: "Mentor",
     image: "/images/collaborators/aisha.jpg",
-    projectIds: [3],
-    achievementIds: [3] 
+    projectIds: [3, 5],
+    achievementIds: [3, 7] 
   },
   {
     id: 8,
@@ -61,6 +61,22 @@ const collaborators = [
     image: "/images/collaborators/abdulrahman.jpg",
     projectIds: [2],
     achievementIds: [] 
+  },
+  {
+    id: 9,
+    name: "Dr. Warda Al Hoqani",
+    role: "Supervisor",
+    image: "/images/collaborators/warda.jpg",
+    projectIds: [5],
+    achievementIds: [7] 
+  },
+  {
+    id: 10,
+    name: "Ms. Shurooq Al Hudar",
+    role: "Co-Supervisor",
+    image: "/images/collaborators/shurooq.jpg",
+    projectIds: [5],
+    achievementIds: [7] 
   }
 ];
 
