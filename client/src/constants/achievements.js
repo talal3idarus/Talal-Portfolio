@@ -2,6 +2,7 @@
 import DCPCImage from '../assets/DCPC.JPEG';
 import IbriMarathonImage from '../assets/Ibri_Marathon.jpg';
 import LNGProgramImage from '../assets/LNG_Program.JPG';
+import CTF from '../assets/Sons_Of_Ahmed.JPG';
 
 
 export const achievements = [
@@ -80,6 +81,7 @@ export const achievements = [
     icon: "🔐",
     color: "#10B981",
     importance: "low",
+    image: CTF,
     team: "Son's of Ahmed"
   },
   {

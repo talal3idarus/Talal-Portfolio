@@ -4,7 +4,7 @@ export const experience = [
     company: "Ministry of Housing",
     position: "Help Desk Technician (OJT)",
     location: "Oman",
-    duration: "Summer 2024",
+    duration: "Summer 2025",
     type: "Internship",
     description: "Provided technical support and troubleshooting services in a government environment",
     responsibilities: [
@@ -21,7 +21,7 @@ export const experience = [
       "Recovered critical data from 15+ corrupted systems",
       "Improved help desk response time by 30%"
     ],
-    logo: "/assets/ministry-housing-logo.png",
+    logo: "/assets/MOH_v1_0.jpg",
     color: "#2563EB"
   },
   {
