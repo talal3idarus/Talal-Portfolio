@@ -199,12 +199,7 @@ const About = () => {
                   Written over {personalInfo.stats.linesOfCode} lines of code
                 </span>
               </div>
-              <div className="flex items-start">
-                <span className="text-lg mr-3">🎯</span>
-                <span className="text-gray-700 dark:text-gray-300">
-                  Won {personalInfo.stats.competitionsWon} programming competitions
-                </span>
-              </div>
+
               <div className="flex items-start">
                 <span className="text-lg mr-3">🎓</span>
                 <span className="text-gray-700 dark:text-gray-300">

@@ -1,7 +1,7 @@
 // Import project images
 import PathFinderImage from '../assets/projects/PathFinder.png';
-import AquaSinkProImage from '../assets/projects/ezone.JPG'; // TODO: Add this image
-import HomeGroceryImage from '../assets/projects/Home_Grocery.png'; // TODO: Add this image
+import AquaSinkProImage from '../assets/projects/ezone.JPG';
+import HomeGroceryImage from '../assets/projects/Home_Grocery.png';
 
 
 export const projects = [
@@ -15,7 +15,6 @@ export const projects = [
     featured: true,
     image: AquaSinkProImage,
     achievements: ["Best Research Paper Award", "Published in IEEE Conference"],
-    impact: "Used by 3000+ families to reduce electricity consumption by 30%",
     color: "#4285F4"
   },
   {
@@ -28,7 +27,6 @@ export const projects = [
     featured: true,
     image: PathFinderImage,
     achievements: ["Helped 500+ students", "Deployed in 3 schools"],
-    impact: "Improved career decision accuracy by 85%",
     color: "#22C55E"
   },
   {
@@ -40,9 +38,7 @@ export const projects = [
     category: "Mobile Development",
     featured: false,
     image: HomeGroceryImage,
-    achievements: ["Featured in University Showcase"],
-    impact: "Reduces family shopping time by 40%",
-    color: "#F59E0B"
+    achievements: ["Featured in University Showcase"],    color: "#F59E0B"
   },
   {
     id: 4,
@@ -52,9 +48,8 @@ export const projects = [
     technologies: ["Python", "Machine Learning", "Natural Language Processing", "Scikit-learn", "TensorFlow"],
     category: "IoT & Research",
     featured: true,
-    image: "/assets/projects/ai-clustering.jpg",
+    image: null, // Image not available
     achievements: ["Best Paper Award IEEE 2025", "Published in Malaysia Conference"],
-    impact: "Improved code evaluation efficiency by 70%",
     color: "#8B5CF6"
   },
   {
@@ -65,9 +60,8 @@ export const projects = [
     technologies: ["React.js", "Firebase", "JavaScript", "CSS", "Real-time Database"],
     category: "Web Development",
     featured: true,
-    image: "/assets/projects/utas-hub.jpg",
+    image: null, // Image not available
     achievements: ["Serving 3,000+ students", "Deployed across UTAS branches"],
-    impact: "Centralized academic resources for entire UTAS student community",
     color: "#06B6D4"
   },
   {
@@ -78,9 +72,8 @@ export const projects = [
     technologies: ["Flutter", "Dart", "Firebase", "Web Scraping", "Google Maps API"],
     category: "Mobile Development",
     featured: false,
-    image: "/assets/projects/original-prices.jpg",
+    image: null, // Image not available
     achievements: ["Cross-platform mobile app", "Real-time price tracking"],
-    impact: "Helps consumers avoid misleading discounts and find genuine deals",
     color: "#F97316"
   }
 ];

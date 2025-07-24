@@ -9,8 +9,8 @@ import MCBCImage from '../assets/achievements/MCBC.jpg';
 import DeanImage from '../assets/achievements/Dean.JPEG';
 
 // Import research paper PDFs
-import TrustworthyPaperPDF from '../assets/certificats/certificate_Trustworthy.pdf';
-import AquaSinkProPaperPDF from '../assets/certificats/certificate_Aqua_Sink_Pro.pdf';
+import TrustworthyPaperPDF from '../assets/certificates/certificate_Trustworthy.pdf';
+import AquaSinkProPaperPDF from '../assets/certificates/certificate_Aqua_Sink_Pro.pdf';
 
 
 export const achievements = [

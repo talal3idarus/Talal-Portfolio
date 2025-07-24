@@ -20,7 +20,7 @@ const Footer = () => {
       { label: 'Resume/CV', href: personalInfo.resumeUrl, external: true },
       { label: 'GitHub', href: 'https://github.com/talal3idarus', external: true },
       { label: 'LinkedIn', href: 'https://linkedin.com/in/talal-alaidarus', external: true },
-      { label: 'Research Papers', href: '#research', external: false }
+      { label: 'Research Papers', href: '#achievements', external: false }
     ],
     contact: [
       { label: personalInfo.email, href: `mailto:${personalInfo.email}`, icon: '📧' },

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Simple test component
-import SimpleHero from "./components/SimpleHero";
-
 // Modern Components
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";

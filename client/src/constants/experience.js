@@ -11,10 +11,10 @@ import OracleSQLCert from '../assets/certificates/certificate_SQL.png';
 import GreatLearningJSCert from '../assets/certificates/certificate_js.png';
 
 // Import certificate PDFs
-import CiscoNetworkPDF from '../assets/certificats/certificate_Networks.pdf';
-import OracleJavaPDF from '../assets/certificats/certificate_Java.pdf';
-import OracleSQLPDF from '../assets/certificats/certificate_sql.pdf';
-import GreatLearningJSPDF from '../assets/certificats/certificate_JavaScript.pdf';
+import CiscoNetworkPDF from '../assets/certificates/certificate_Networks.pdf';
+import OracleJavaPDF from '../assets/certificates/certificate_Java.pdf';
+import OracleSQLPDF from '../assets/certificates/certificate_sql.pdf';
+import GreatLearningJSPDF from '../assets/certificates/certificate_JavaScript.pdf';
 
 export const experience = [
   {
@@ -124,7 +124,7 @@ export const certifications = [
     issuer: "Cisco Networking Academy",
     date: "February 8, 2022",
     credentialId: "CCNA-Networks-2022",
-    logo: "/assets/logos/cisco-logo.png",
+    logo: null, // Cisco logo not available
     certificateImage: CiscoNetworkCert,
     certificatePDF: CiscoNetworkPDF
   },
@@ -134,7 +134,7 @@ export const certifications = [
     issuer: "Oracle Academy",
     date: "August 31, 2022",
     credentialId: "Oracle-Java-Foundations-2022",
-    logo: "/assets/logos/oracle-logo.png",
+    logo: null, // Oracle logo not available
     certificateImage: OracleJavaCert,
     certificatePDF: OracleJavaPDF
   },
@@ -144,7 +144,7 @@ export const certifications = [
     issuer: "Oracle Academy",
     date: "December 19, 2022",
     credentialId: "Oracle-SQL-Programming-2022",
-    logo: "/assets/logos/oracle-logo.png",
+    logo: null, // Oracle logo not available
     certificateImage: OracleSQLCert,
     certificatePDF: OracleSQLPDF
   },
@@ -154,7 +154,7 @@ export const certifications = [
     issuer: "Great Learning",
     date: "September 2023",
     credentialId: "verify.mygreatlearning.com/SUIWNGJG",
-    logo: "/assets/logos/greatlearning-logo.png",
+    logo: null, // Great Learning logo not available
     certificateImage: GreatLearningJSCert,
     certificatePDF: GreatLearningJSPDF
   }

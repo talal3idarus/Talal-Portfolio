@@ -20,7 +20,7 @@ export const personalInfo = {
     projectsCompleted: "8+",
     yearsExperience: "2+",
     technologiesMastered: "25+",
-    competitionsWon: "7+",
+    competitionsWon: "3+",
     papersPublished: "2",
     studentsHelped: "300+",
     linesOfCode: "10,000+",
