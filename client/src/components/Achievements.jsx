@@ -149,24 +149,6 @@ const Achievements = () => {
             </p>
           </motion.div>
         )}
-
-        {/* Timeline View Toggle */}
-        <motion.div
-          variants={fadeInUp}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-900 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <span className="mr-2">📅</span>
-            View Timeline
-          </motion.button>
-        </motion.div>
       </div>
     </div>
   );
@@ -178,6 +160,19 @@ const AchievementCard = ({ achievement, index, isHovered, onHover, categoryColor
     high: 'ring-2 ring-teal-400 shadow-teal-400/25',
     medium: 'ring-1 ring-emerald-400 shadow-emerald-400/15',
     low: 'ring-1 ring-gray-300 dark:ring-gray-600'
+  };
+
+  // Function to download research paper PDF
+  const downloadPaper = (e) => {
+    e.stopPropagation(); // Prevent card hover effects
+    if (achievement.paperPDF) {
+      const link = document.createElement('a');
+      link.href = achievement.paperPDF;
+      link.download = `${achievement.title.replace(/[^a-zA-Z0-9]/g, '_')}_ResearchPaper.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (
@@ -195,13 +190,25 @@ const AchievementCard = ({ achievement, index, isHovered, onHover, categoryColor
       >
         {/* Background image if available */}
         {achievement.image && (
-          <div className="absolute inset-0">
+          <div 
+            className="absolute inset-0 cursor-pointer group/image"
+            onClick={achievement.paperPDF ? downloadPaper : undefined}
+          >
             <img 
               src={achievement.image} 
               alt={achievement.title}
-              className="w-full h-full object-cover opacity-60"
+              className="w-full h-full object-cover opacity-60 transition-opacity duration-300 group-hover/image:opacity-80"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/20"></div>
+            
+            {/* Download overlay for research papers */}
+            {achievement.paperPDF && (
+              <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 text-sm font-medium bg-black/70 px-3 py-1 rounded-full">
+                  📄 Download Paper
+                </span>
+              </div>
+            )}
           </div>
         )}
         

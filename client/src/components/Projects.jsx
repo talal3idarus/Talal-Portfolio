@@ -112,7 +112,7 @@ const Projects = () => {
           </motion.div>
         )}
 
-        {/* Call to Action */}
+        Call to Action
         <motion.div
           variants={fadeInUp}
           initial="initial"
@@ -185,7 +185,7 @@ const ProjectCard = ({ project, index, isHovered, onHover }) => {
           </motion.div>
         )}
 
-        {/* Overlay with links */}
+        {/* Overlay with links
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0 }}
@@ -211,7 +211,7 @@ const ProjectCard = ({ project, index, isHovered, onHover }) => {
           >
             <ExternalLinkIcon />
           </motion.a>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Project Content */}

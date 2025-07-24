@@ -64,11 +64,22 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-200/20'
-            : 'bg-transparent'
+            ? 'bg-white/20 dark:bg-gray-900/20 backdrop-blur-2xl shadow-2xl border-b border-white/20 dark:border-gray-700/30'
+            : 'bg-gradient-to-r from-black/10 via-black/20 to-black/10 backdrop-blur-xl'
         }`}
+        style={{
+          background: isScrolled 
+            ? 'linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.15))' 
+            : 'linear-gradient(135deg, rgba(0,0,0,0.15), rgba(0,0,0,0.05))',
+          backdropFilter: 'blur(20px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+          borderBottom: isScrolled ? '1px solid rgba(255,255,255,0.3)' : '1px solid rgba(255,255,255,0.1)',
+          boxShadow: isScrolled 
+            ? '0 8px 32px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3)' 
+            : '0 4px 24px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1)'
+        }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -79,16 +90,20 @@ const Navbar = () => {
               onClick={() => scrollToSection('home')}
               className="flex items-center space-x-3 cursor-pointer"
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-teal-600 to-emerald-600 rounded-full overflow-hidden shadow-lg ring-2 ring-white/20">
+              <div className="w-10 h-10 bg-gradient-to-br from-teal-600 to-emerald-600 rounded-full overflow-hidden shadow-xl ring-2 ring-white/30 backdrop-blur-sm"
+                style={{
+                  boxShadow: '0 8px 32px rgba(20, 184, 166, 0.3), inset 0 1px 0 rgba(255,255,255,0.2)'
+                }}
+              >
                 <img
                   src={personalInfo.avatar}
                   alt="Talal Ahmed Al Aidarus"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className={`font-bold text-xl transition-colors ${
+              <span className={`font-bold text-xl transition-colors duration-300 ${
                 isScrolled ? 'text-gray-900 dark:text-white' : 'text-white'
-              }`}>
+              } drop-shadow-lg`}>
                 Talal
               </span>
             </motion.div>
@@ -98,27 +113,44 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <motion.button
                   key={item.id}
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                  className={`relative px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                     activeSection === item.id
                       ? isScrolled
-                        ? 'text-teal-600 bg-teal-50 dark:text-teal-400 dark:bg-teal-900/20'
-                        : 'text-white bg-white/20'
+                        ? 'text-teal-600 bg-white/20 shadow-lg backdrop-blur-sm border border-white/30'
+                        : 'text-white bg-white/20 shadow-lg backdrop-blur-sm border border-white/30'
                       : isScrolled
-                        ? 'text-gray-700 hover:text-teal-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-teal-400 dark:hover:bg-gray-800'
-                        : 'text-white/80 hover:text-white hover:bg-white/10'
+                        ? 'text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-white/10 hover:backdrop-blur-sm hover:border-white/20 border border-transparent'
+                        : 'text-white/90 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm hover:border-white/20 border border-transparent'
                   }`}
+                  style={{
+                    background: activeSection === item.id 
+                      ? 'linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1))' 
+                      : undefined,
+                    backdropFilter: activeSection === item.id ? 'blur(10px) saturate(150%)' : undefined,
+                    WebkitBackdropFilter: activeSection === item.id ? 'blur(10px) saturate(150%)' : undefined,
+                    boxShadow: activeSection === item.id 
+                      ? '0 4px 16px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.3)' 
+                      : undefined
+                  }}
                 >
                   <span className="mr-2">{item.icon}</span>
                   {item.label}
                   {activeSection === item.id && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-teal-600/10 rounded-lg"
+                      className="absolute inset-0 rounded-xl"
                       initial={false}
                       transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1))',
+                        backdropFilter: 'blur(10px)',
+                        WebkitBackdropFilter: 'blur(10px)',
+                        border: '1px solid rgba(255,255,255,0.3)',
+                        boxShadow: '0 4px 16px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.4)'
+                      }}
                     />
                   )}
                 </motion.button>
@@ -129,11 +161,15 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`md:hidden p-2 rounded-lg transition-colors ${
-                isScrolled 
-                  ? 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800' 
-                  : 'text-white hover:bg-white/10'
+              className={`md:hidden p-3 rounded-xl transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-sm border border-transparent hover:border-white/20 ${
+                isScrolled ? 'text-gray-900 dark:text-white' : 'text-white/90 hover:text-white'
               }`}
+              style={{
+                background: isMobileMenuOpen ? 'linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1))' : undefined,
+                backdropFilter: isMobileMenuOpen ? 'blur(10px)' : undefined,
+                WebkitBackdropFilter: isMobileMenuOpen ? 'blur(10px)' : undefined,
+                boxShadow: isMobileMenuOpen ? '0 4px 16px rgba(0,0,0,0.1)' : undefined
+              }}
             >
               <div className="space-y-1">
                 <motion.div
@@ -172,7 +208,13 @@ const Navbar = () => {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
-                className="md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200/20 relative z-50"
+                className="md:hidden relative z-50 border-t border-white/20"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.15))',
+                  backdropFilter: 'blur(20px) saturate(180%)',
+                  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3)'
+                }}
               >
                 <div className="px-4 py-2 space-y-1 max-h-96 overflow-y-auto">
                   {navItems.map((item, index) => (
@@ -183,20 +225,33 @@ const Navbar = () => {
                       transition={{ delay: index * 0.1 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => scrollToSection(item.id)}
-                      className={`w-full flex items-center px-4 py-3 rounded-lg font-medium text-left transition-colors ${
+                      className={`w-full flex items-center px-4 py-3 rounded-xl font-medium text-left transition-all duration-300 border ${
                         activeSection === item.id
-                          ? 'text-teal-600 bg-teal-50 dark:text-teal-400 dark:bg-teal-900/20'
-                          : 'text-gray-700 hover:text-teal-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-teal-400 dark:hover:bg-gray-800'
+                          ? 'text-white bg-white/20 backdrop-blur-sm border-white/30 shadow-lg'
+                          : 'text-gray-800 dark:text-white/80 hover:text-gray-900 dark:hover:text-white hover:bg-white/10 hover:backdrop-blur-sm hover:border-white/20 border-transparent'
                       }`}
+                      style={{
+                        background: activeSection === item.id 
+                          ? 'linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1))' 
+                          : undefined,
+                        backdropFilter: activeSection === item.id ? 'blur(10px) saturate(150%)' : undefined,
+                        WebkitBackdropFilter: activeSection === item.id ? 'blur(10px) saturate(150%)' : undefined,
+                        boxShadow: activeSection === item.id 
+                          ? '0 4px 16px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.3)' 
+                          : undefined
+                      }}
                     >
                       <span className="mr-3 text-lg">{item.icon}</span>
                       {item.label}
                       {activeSection === item.id && (
                         <motion.div
                           layoutId="activeMobileTab"
-                          className="ml-auto w-2 h-2 bg-teal-600 rounded-full"
+                          className="ml-auto w-2 h-2 bg-white rounded-full shadow-lg"
                           initial={false}
                           transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                          style={{
+                            boxShadow: '0 0 8px rgba(255,255,255,0.5), 0 0 16px rgba(255,255,255,0.3)'
+                          }}
                         />
                       )}
                     </motion.button>

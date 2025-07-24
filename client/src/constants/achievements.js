@@ -1,12 +1,16 @@
 // Import achievement images
-import DCPCImage from '../assets/DCPC.JPEG';
-import IbriMarathonImage from '../assets/Ibri_Marathon.jpg';
-import LNGProgramImage from '../assets/LNG_Program.JPG';
-import CTF from '../assets/Sons_Of_Ahmed.JPG';
-import AquaBestPaperImage from '../assets/Aqua_Best Research_Paper_Award.png';
-import TrustworthyCertificateImage from '../assets/Trustworthy_certificate.png';
-import MCBCImage from '../assets/MCBC.jpg';
-import DeanImage from '../assets/Dean.JPEG';
+import DCPCImage from '../assets/achievements/DCPC.JPEG';
+import IbriMarathonImage from '../assets/achievements/Ibri_Marathon.jpg';
+import LNGProgramImage from '../assets/achievements/LNG_Program.JPG';
+import CTF from '../assets/achievements/Sons_Of_Ahmed.JPG';
+import AquaBestPaperImage from '../assets/achievements/Aqua_Best Research_Paper_Award.png';
+import TrustworthyCertificateImage from '../assets/achievements/Trustworthy_certificate.png';
+import MCBCImage from '../assets/achievements/MCBC.jpg';
+import DeanImage from '../assets/achievements/Dean.JPEG';
+
+// Import research paper PDFs
+import TrustworthyPaperPDF from '../assets/certificats/certificate_Trustworthy.pdf';
+import AquaSinkProPaperPDF from '../assets/certificats/certificate_Aqua_Sink_Pro.pdf';
 
 
 export const achievements = [
@@ -20,7 +24,8 @@ export const achievements = [
     color: "#FFD700",
     importance: "high",
     location: "Penang, Malaysia",
-    image: TrustworthyCertificateImage
+    image: TrustworthyCertificateImage,
+    paperPDF: TrustworthyPaperPDF
   },
   {
     id: 2,
@@ -32,7 +37,8 @@ export const achievements = [
     color: "#22C55E",
     importance: "high",
     location: "India",
-    image: AquaBestPaperImage
+    image: AquaBestPaperImage,
+    paperPDF: AquaSinkProPaperPDF
   },
   {
     id: 3,
@@ -96,7 +102,7 @@ export const achievements = [
     title: "Dean's List Recognition",
     description: "Consistently maintained high academic performance and received Dean's List recognition",
     category: "Academic",
-    date: "2022-2024",
+    date: "2022-2025",
     icon: "🎓",
     color: "#6366F1",
     importance: "medium",

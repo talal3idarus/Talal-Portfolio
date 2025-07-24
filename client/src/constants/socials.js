@@ -1,6 +1,6 @@
 // Import profile picture and CV
-import ProfilePicture from '../assets/Profile_picture.JPEG';
-import TalalCV from '../assets/Talal CV.pdf';
+import ProfilePicture from '../assets/profile/Profile_picture.JPEG';
+import TalalCV from '../assets/profile/Talal CV.pdf';
 
 export const personalInfo = {
   name: "Talal Ahmed Al Aidarus",

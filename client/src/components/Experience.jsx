@@ -317,51 +317,81 @@ const EducationContent = ({ educations }) => (
 );
 
 // Certifications Content Component
-const CertificationsContent = ({ certs }) => (
-  <motion.div
-    key="certifications"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -20 }}
-    transition={{ duration: 0.3 }}
-    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-  >
-    {certs.map((cert, index) => (
-      <motion.div
-        key={cert.id}
-        variants={staggerItem}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        whileHover={cardHover}
-        className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-200/20 dark:border-gray-700/20"
-      >
-        <div className="text-center">
-          {cert.logo && (
-            <div className="w-36 h-36 flex items-center justify-center mx-auto mb-4">
-              <img
-                src={cert.logo}
-                alt={`${cert.issuer} logo`}
-                className="w-32 h-32 object-contain"
-              />
-            </div>
-          )}
-          <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-            {cert.title}
-          </h4>
-          <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">
-            {cert.issuer}
-          </p>
-          <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
-            Issued: {cert.date}
-          </p>
-          <p className="text-xs text-gray-500 dark:text-gray-400 font-mono">
-            ID: {cert.credentialId}
-          </p>
-        </div>
-      </motion.div>
-    ))}
-  </motion.div>
-);
+const CertificationsContent = ({ certs }) => {
+  // Function to download certificate PDF
+  const downloadCertificate = (cert) => {
+    if (cert.certificatePDF) {
+      const link = document.createElement('a');
+      link.href = cert.certificatePDF;
+      link.download = `${cert.title}_${cert.issuer}_Certificate.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
+  return (
+    <motion.div
+      key="certifications"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      {certs.map((cert, index) => (
+        <motion.div
+          key={cert.id}
+          variants={staggerItem}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          whileHover={cardHover}
+          className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-200/20 dark:border-gray-700/20"
+        >
+          <div className="text-center">
+            {cert.certificateImage ? (
+              <div 
+                className="relative w-full h-48 mb-4 rounded-xl overflow-hidden shadow-lg cursor-pointer group"
+                onClick={() => downloadCertificate(cert)}
+              >
+                <img
+                  src={cert.certificateImage}
+                  alt={`${cert.title} certificate`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium bg-black/70 px-3 py-1 rounded-full">
+                    📥 Download PDF
+                  </span>
+                </div>
+              </div>
+            ) : cert.logo && (
+              <div className="w-36 h-36 flex items-center justify-center mx-auto mb-4">
+                <img
+                  src={cert.logo}
+                  alt={`${cert.issuer} logo`}
+                  className="w-32 h-32 object-contain"
+                />
+              </div>
+            )}
+            <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              {cert.title}
+            </h4>
+            <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">
+              {cert.issuer}
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              Issued: {cert.date}
+            </p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 font-mono mb-3">
+              ID: {cert.credentialId}
+            </p>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+};
 
 export default Experience;
