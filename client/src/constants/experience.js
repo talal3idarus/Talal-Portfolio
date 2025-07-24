@@ -1,3 +1,7 @@
+// Import company/institution logos
+import MOHLogo from '../assets/MOH_v1_0.jpg';
+import UTASLogo from '../assets/UTAS_Logo.png';
+
 export const experience = [
   {
     id: 1,
@@ -21,7 +25,7 @@ export const experience = [
       "Recovered critical data from 15+ corrupted systems",
       "Improved help desk response time by 30%"
     ],
-    logo: "/assets/MOH_v1_0.jpg",
+    logo: MOHLogo,
     color: "#2563EB"
   },
   {
@@ -45,7 +49,7 @@ export const experience = [
       "Published 2 research papers in IEEE conferences",
       "Won 2 Best Paper Award at international conference",
     ],
-    logo: "/assets/university-logo.png",
+    logo: UTASLogo,
     color: "#059669"
   },
   {

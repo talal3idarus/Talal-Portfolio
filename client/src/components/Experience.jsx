@@ -149,11 +149,11 @@ const ExperienceContent = ({ experiences }) => (
                   </div>
                 </div>
                 {exp.logo && (
-                  <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center">
+                  <div className="w-40 h-40 flex items-center justify-center">
                     <img
                       src={exp.logo}
                       alt={`${exp.company} logo`}
-                      className="w-12 h-12 object-contain"
+                      className="w-36 h-36 object-contain"
                     />
                   </div>
                 )}
@@ -261,11 +261,11 @@ const EducationContent = ({ educations }) => (
             </div>
           </div>
           {edu.logo && (
-            <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center">
+            <div className="w-36 h-36 flex items-center justify-center">
               <img
                 src={edu.logo}
                 alt={`${edu.institution} logo`}
-                className="w-12 h-12 object-contain"
+                className="w-32 h-32 object-contain"
               />
             </div>
           )}
@@ -338,11 +338,11 @@ const CertificationsContent = ({ certs }) => (
       >
         <div className="text-center">
           {cert.logo && (
-            <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-36 h-36 flex items-center justify-center mx-auto mb-4">
               <img
                 src={cert.logo}
                 alt={`${cert.issuer} logo`}
-                className="w-12 h-12 object-contain"
+                className="w-32 h-32 object-contain"
               />
             </div>
           )}

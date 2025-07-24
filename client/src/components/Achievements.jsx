@@ -199,22 +199,25 @@ const AchievementCard = ({ achievement, index, isHovered, onHover, categoryColor
             <img 
               src={achievement.image} 
               alt={achievement.title}
-              className="w-full h-full object-cover opacity-30"
+              className="w-full h-full object-cover opacity-60"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/20"></div>
           </div>
         )}
         
-        <motion.div
-          animate={{ 
-            scale: isHovered ? 1.2 : 1,
-            rotate: isHovered ? 5 : 0 
-          }}
-          transition={{ duration: 0.3 }}
-          className="relative z-10 text-6xl"
-        >
-          {achievement.icon}
-        </motion.div>
+        {/* Only show emoji if no image is available */}
+        {!achievement.image && (
+          <motion.div
+            animate={{ 
+              scale: isHovered ? 1.2 : 1,
+              rotate: isHovered ? 5 : 0 
+            }}
+            transition={{ duration: 0.3 }}
+            className="relative z-10 text-6xl"
+          >
+            {achievement.icon}
+          </motion.div>
+        )}
 
         {/* Year badge */}
         <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-sm font-bold z-20">

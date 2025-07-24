@@ -153,7 +153,7 @@ const Contact = () => {
                         {social.name}
                       </p>
                       <p className="text-gray-600 dark:text-gray-300 text-xs">
-                        {social.username}
+                        {/* {social.username} */}
                       </p>
                     </div>
                   </motion.a>

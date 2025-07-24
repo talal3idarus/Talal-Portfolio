@@ -3,6 +3,10 @@ import DCPCImage from '../assets/DCPC.JPEG';
 import IbriMarathonImage from '../assets/Ibri_Marathon.jpg';
 import LNGProgramImage from '../assets/LNG_Program.JPG';
 import CTF from '../assets/Sons_Of_Ahmed.JPG';
+import AquaBestPaperImage from '../assets/Aqua_Best Research_Paper_Award.png';
+import TrustworthyCertificateImage from '../assets/Trustworthy_certificate.png';
+import MCBCImage from '../assets/MCBC.jpg';
+import DeanImage from '../assets/Dean.JPEG';
 
 
 export const achievements = [
@@ -15,7 +19,8 @@ export const achievements = [
     icon: "🏆",
     color: "#FFD700",
     importance: "high",
-    location: "Penang, Malaysia"
+    location: "Penang, Malaysia",
+    image: TrustworthyCertificateImage
   },
   {
     id: 2,
@@ -26,7 +31,8 @@ export const achievements = [
     icon: "🏆",
     color: "#22C55E",
     importance: "high",
-    location: "India"
+    location: "India",
+    image: AquaBestPaperImage
   },
   {
     id: 3,
@@ -59,7 +65,8 @@ export const achievements = [
     date: "2023",
     icon: "💻",
     color: "#3B82F6",
-    importance: "medium"
+    importance: "medium",
+    image: MCBCImage
   },
   {
     id: 6,
@@ -92,7 +99,8 @@ export const achievements = [
     date: "2022-2024",
     icon: "🎓",
     color: "#6366F1",
-    importance: "medium"
+    importance: "medium",
+    image: DeanImage
   }
 ];
 
