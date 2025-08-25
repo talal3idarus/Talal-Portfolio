@@ -27,34 +27,52 @@ const Skills = () => {
 
   const SkillBar = ({ skill, index, isActive }) => (
     <div 
-      className={`skill-item animate-slideInUp ${isActive ? 'animate-fill-both' : ''}`}
+      className={`skill-item animate-slideInUp terminal-window transition-all duration-300 ${isActive ? 'animate-fill-both' : ''}`}
       style={{ animationDelay: `${index * 0.1}s` }}
     >
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-3">
-          <span className="text-2xl">{skill.icon}</span>
-          <div>
-            <h4 className="font-semibold text-text">{skill.name}</h4>
-            <p className="text-sm text-text-muted">{skill.years} years experience</p>
+      <div className="terminal-header">
+        <div className="terminal-dot red"></div>
+        <div className="terminal-dot yellow"></div>
+        <div className="terminal-dot green"></div>
+        <span className="text-text-muted text-sm ml-4">~/{skill.name.toLowerCase().replace(' ', '-')}</span>
+      </div>
+      <div className="terminal-content">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl border-cyber p-2 rounded">{skill.icon}</span>
+            <div>
+              <h4 className="font-semibold text-primary text-hologram" data-text={skill.name}>{skill.name}</h4>
+              <p className="text-sm text-text-muted typing-cursor">{skill.years} years experience</p>
+            </div>
+          </div>
+          <div className="text-right">
+            <span className="text-lg font-bold text-accent-orange text-glitch" data-text={`${skill.level}%`}>{skill.level}%</span>
           </div>
         </div>
-        <div className="text-right">
-          <span className="text-lg font-bold text-primary">{skill.level}%</span>
+        {/* Skill Progress Bar */}
+        <div className="mt-4">
+          <div className="text-sm text-primary mb-2">
+            <span className="text-accent-orange">$</span> skill --level {skill.name.toLowerCase().replace(' ', '-')}
+          </div>
+          <div className="progress bg-gray-800 rounded-full h-2 overflow-hidden">
+            <div 
+              className={`progress-bar ${isVisible ? 'animate-fill-forwards' : ''} h-full rounded-full`}
+              style={{ 
+                width: isVisible ? `${skill.level}%` : '0%',
+                animationDelay: `${index * 0.1 + 0.3}s`,
+                background: skill.level >= 90 ? 'linear-gradient(90deg, var(--primary), var(--accent-orange))' : 
+                           skill.level >= 80 ? 'linear-gradient(90deg, var(--primary), var(--accent-gold))' : 
+                           'linear-gradient(90deg, var(--primary), var(--primary))',
+                boxShadow: skill.level >= 90 ? '0 0 20px rgba(20, 184, 166, 0.6)' :
+                          skill.level >= 80 ? '0 0 15px rgba(20, 184, 166, 0.4)' :
+                          '0 0 10px rgba(20, 184, 166, 0.3)'
+              }}
+            />
+          </div>
+          <div className="text-xs text-text-muted mt-1">
+            [{Array(Math.floor(skill.level/10)).fill('█').join('')}{Array(10-Math.floor(skill.level/10)).fill('░').join('')}] {skill.level}%
+          </div>
         </div>
-      </div>
-      
-      {/* Skill Progress Bar */}
-      <div className="progress">
-        <div 
-          className={`progress-bar ${isVisible ? 'animate-fill-forwards' : ''}`}
-          style={{ 
-            width: isVisible ? `${skill.level}%` : '0%',
-            animationDelay: `${index * 0.1 + 0.3}s`,
-            background: skill.level >= 90 ? 'var(--gradient-accent)' : 
-                       skill.level >= 80 ? 'var(--gradient-primary)' : 
-                       'var(--gradient-primary)'
-          }}
-        />
       </div>
     </div>
   );
@@ -65,26 +83,27 @@ const Skills = () => {
       id="skills" 
       className="py-20 relative overflow-hidden"
     >
-      {/* Background Pattern */}
+      {/* Enhanced Background with Gradient Mesh */}
+      <div className="absolute inset-0 gradient-mesh opacity-50"></div>
       <div className="absolute inset-0 bg-dots opacity-5"></div>
       
       {/* Floating Elements - Technology meets Creativity */}
-      <div className="absolute top-20 left-10 w-16 h-16 bg-primary/10 rounded-lg animate-float rotate-12"></div>
-      <div className="absolute bottom-32 right-16 w-20 h-20 bg-accent-orange/10 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
-      <div className="absolute top-1/3 right-32 w-12 h-12 bg-accent-gold/10 rounded-lg animate-float rotate-45" style={{animationDelay: '2s'}}></div>
+      <div className="absolute top-20 left-10 w-16 h-16 bg-primary/10 rounded-lg animate-float rotate-12 glass-morphism border border-primary/20"></div>
+      <div className="absolute bottom-32 right-16 w-20 h-20 bg-accent-orange/10 rounded-full animate-float glass-morphism border border-accent-orange/20" style={{animationDelay: '1s'}}></div>
+      <div className="absolute top-1/3 right-32 w-12 h-12 bg-accent-gold/10 rounded-lg animate-float rotate-45 glass-morphism border border-accent-gold/20" style={{animationDelay: '2s'}}></div>
       
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fadeInUp">
-          <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+          <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 glass-morphism border border-primary/20 shadow-enhanced">
             ⚡ Technical Expertise
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Skills & Technologies</span>
+            <span className="gradient-text shimmer-text">Skills & Technologies</span>
           </h2>
-          <p className="text-xl text-text-muted max-w-3xl mx-auto leading-relaxed">
-            Where <span className="text-primary font-semibold">technology</span> meets{' '}
-            <span className="text-accent-orange font-semibold">creativity</span> — 
+          <p className="text-xl text-text-muted max-w-3xl mx-auto leading-relaxed glass-morphism p-6 rounded-2xl border border-white/10">
+            Where <span className="text-primary font-semibold gradient-text">technology</span> meets{' '}
+            <span className="text-accent-orange font-semibold gradient-text">creativity</span> — 
             building the future with cutting-edge tools and innovative thinking.
           </p>
         </div>
@@ -97,10 +116,10 @@ const Skills = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`category-btn ${
+                className={`category-btn magnetic-hover transition-all duration-300 ${
                   activeCategory === category 
-                    ? 'bg-primary text-white shadow-primary' 
-                    : 'bg-surface-glass border-2 border-border text-text-muted hover:border-primary hover:text-primary'
+                    ? 'bg-primary text-white shadow-neon scale-105' 
+                    : 'bg-surface-glass border-2 border-border text-text-muted hover:border-primary hover:text-primary glass-morphism shadow-enhanced hover:shadow-neon'
                 }`}
                 style={{ 
                   background: activeCategory === category ? categoryData.color : undefined 
@@ -130,10 +149,10 @@ const Skills = () => {
                 }`}
               >
                 {/* Category Header */}
-                <div className="card glass mb-8 text-center">
+                <div className="card glass mb-8 text-center glass-morphism border border-white/10 shadow-enhanced">
                   <div className="flex items-center justify-center gap-4 mb-4">
                     <div 
-                      className="w-16 h-16 rounded-xl flex items-center justify-center text-2xl"
+                      className="w-16 h-16 rounded-xl flex items-center justify-center text-2xl glass-morphism border shadow-enhanced"
                       style={{ 
                         background: `${categoryData.color}20`,
                         border: `2px solid ${categoryData.color}40`

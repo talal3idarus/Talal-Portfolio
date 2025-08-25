@@ -25,27 +25,27 @@ const Footer = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-circuit opacity-10"></div>
       
-      {/* Creative Floating Elements */}
-      <div className="absolute top-8 left-8 w-24 h-24 bg-white/5 rounded-2xl animate-float rotate-12"></div>
-      <div className="absolute bottom-12 right-12 w-16 h-16 bg-accent-orange/20 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
-      <div className="absolute top-1/2 right-1/4 w-8 h-8 bg-accent-gold/20 rounded-lg animate-float rotate-45" style={{animationDelay: '2s'}}></div>
+      {/* Creative Floating Elements - Hidden on mobile */}
+      <div className="hidden md:block absolute top-8 left-8 w-24 h-24 bg-white/5 rounded-2xl animate-float rotate-12"></div>
+      <div className="hidden md:block absolute bottom-12 right-12 w-16 h-16 bg-accent-orange/20 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+      <div className="hidden md:block absolute top-1/2 right-1/4 w-8 h-8 bg-accent-gold/20 rounded-lg animate-float rotate-45" style={{animationDelay: '2s'}}></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Main Footer Content */}
-        <div className="py-16 grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-          {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
+        {/* Main Footer Content - Mobile responsive grid */}
+        <div className="py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {/* Brand Section - Mobile responsive */}
+          <div className="lg:col-span-2 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-xl font-bold border border-white/20">
                 TA
               </div>
               <div>
-                <h3 className="text-xl font-bold">{personalInfo?.name || 'Talal Ahmed Al Aidarus'}</h3>
+                <h3 className="text-lg sm:text-xl font-bold">{personalInfo?.name || 'Talal Ahmed Al Aidarus'}</h3>
                 <p className="text-white/80 text-sm">{personalInfo?.title || 'Full Stack Developer & Researcher'}</p>
               </div>
             </div>
             
-            <p className="text-white/80 leading-relaxed mb-6 max-w-md">
+            <p className="text-white/80 leading-relaxed mb-6 max-w-md mx-auto sm:mx-0 text-sm sm:text-base">
               Passionate about creating innovative solutions that bridge technology and research. 
               Let's build something amazing together.
             </p>

@@ -44,7 +44,7 @@ export const socialLinks = [
   },
   {
     id: 2,
-    platform: "LinkedIn",
+    platform: "LinkedIn", 
     handle: "@talal-alaidarus",
     url: "https://www.linkedin.com/in/talalalaidarus",
     color: "#0A66C2",
@@ -58,7 +58,7 @@ export const socialLinks = [
   {
     id: 3,
     platform: "Instagram",
-    handle: "@talal_alaidarus",
+    handle: "@talal_alaidarus", 
     url: "https://instagram.com/talal3idarus",
     color: "#E4405F",
     description: "Follow my photography and personal interests",
@@ -70,56 +70,17 @@ export const socialLinks = [
   },
   {
     id: 4,
-    platform: "Twitter",
-    handle: "@talal_tech",
-    url: "https://twitter.com/talal_tech",
-    color: "#1DA1F2",
-    description: "Follow my tech thoughts and updates",
+    platform: "Email",
+    handle: "talalaidarus@gmail.com",
+    url: "mailto:talalaidarus@gmail.com", 
+    color: "#EA4335",
+    description: "Send me an email for business inquiries or collaborations",
     icon: (
       <svg fill="currentColor" viewBox="0 0 24 24">
-        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+        <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h3.819v.904L12 10.1l6.545-5.375v-.904h3.819c.904 0 1.636.732 1.636 1.636z"/>
       </svg>
     )
   }
-];
-
-export const socials = [
-  {
-    id: 1,
-    name: "GitHub",
-    url: "https://github.com/talal3idarus",
-    icon: "github",
-    username: "@talal3idarus",
-    color: "#181717",
-    description: "Check out my code repositories and open source contributions"
-  },
-  {
-    id: 2,
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/talalalaidarus",
-    icon: "linkedin",
-    username: "@talal-alaidarus",
-    color: "#0A66C2",
-    description: "Connect with me professionally and see my career journey"
-  },
-  {
-    id: 3,
-    name: "Instagram",
-    url: "https://instagram.com/talal3idarus",
-    icon: "instagram",
-    username: "@talal_alaidarus",
-    color: "#E4405F",
-    description: "Follow my photography and personal interests"
-  },
-  {
-    id: 4,
-    name: "Email",
-    url: "mailto:talalaidarus@gmail.com",
-    icon: "email",
-    username: "talalaidarus@gmail.com",
-    color: "#EA4335",
-    description: "Send me an email for business inquiries or collaborations"
-  },
 ];
 
 export const contactInfo = {
