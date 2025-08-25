@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
-// Modern Components
+// Import CSS styles
+import './styles/index.css';
+
+// Import all components
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
-import Projects from "./components/Projects";
 import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import LoadingScreen from "./components/LoadingScreen";
-
-// Animation variants
-import { pageVariants, pageTransition } from "./animations/variants";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,66 +29,77 @@ function App() {
   }, []);
 
   if (isLoading) {
-    return <LoadingScreen />;
+    return (
+      <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
+        <div className="text-center">
+          <div className="w-16 h-16 bg-gradient-accent rounded-full mx-auto mb-4 flex items-center justify-center animate-pulse">
+            <div className="text-2xl font-bold text-white">TA</div>
+          </div>
+          <div className="text-primary font-medium">Loading Portfolio...</div>
+          <div className="w-32 h-1 bg-surface rounded-full mx-auto mt-4 overflow-hidden">
+            <div className="h-full bg-gradient-accent animate-loading-bar"></div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900">
+    <div className="min-h-screen bg-background relative">
+      {/* Navigation */}
       <Navbar />
       
-      <AnimatePresence mode="wait">
-        <motion.main
-          initial="initial"
-          animate="in"
-          exit="out"
-          variants={pageVariants}
-          transition={pageTransition}
-          className="relative"
-        >
-          {/* Hero Section with dramatic entrance */}
-          <section id="home" className="relative">
-            <Hero />
-          </section>
+      {/* Main Content */}
+      <main>
+        {/* Hero Section */}
+        <section id="home" className="relative">
+          <Hero />
+        </section>
 
-          {/* About Section */}
-          <section id="about" className="relative scroll-mt-20">
-            <About />
-          </section>
+        {/* About Section */}
+        <section id="about" className="relative">
+          <About />
+        </section>
 
-          {/* Skills Section with interactive elements */}
-          <section id="skills" className="relative scroll-mt-20">
-            <Skills />
-          </section>
+        {/* Skills Section */}
+        <section id="skills" className="relative">
+          <Skills />
+        </section>
 
-          {/* Projects Section with filtering */}
-          <section id="projects" className="relative scroll-mt-20">
-            <Projects />
-          </section>
+        {/* Experience Section */}
+        <section id="experience" className="relative">
+          <Experience />
+        </section>
 
-          {/* Experience & Education */}
-          <section id="experience" className="relative scroll-mt-20">
-            <Experience />
-          </section>
+        {/* Projects Section */}
+        <section id="projects" className="relative">
+          <Projects />
+        </section>
 
-          {/* Achievements with awards showcase */}
-          <section id="achievements" className="relative scroll-mt-20">
-            <Achievements />
-          </section>
+        {/* Achievements Section */}
+        <section id="achievements" className="relative">
+          <Achievements />
+        </section>
 
-          {/* Contact Section with modern form */}
-          <section id="contact" className="relative scroll-mt-20">
-            <Contact />
-          </section>
-        </motion.main>
-      </AnimatePresence>
+        {/* Contact Section */}
+        <section id="contact" className="relative">
+          <Contact />
+        </section>
+      </main>
 
+      {/* Footer */}
       <Footer />
       
-      {/* Background decorative elements */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-32 w-80 h-80 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute top-40 left-1/2 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+      {/* Background decorative elements - Technology meets creativity */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        {/* Primary teal glow */}
+        <div className="absolute -top-40 -right-32 w-80 h-80 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
+        {/* Warm orange accent */}
+        <div className="absolute -bottom-40 -left-32 w-80 h-80 bg-accent-orange rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse" style={{animationDelay: '1s'}}></div>
+        {/* Gold creativity highlight */}
+        <div className="absolute top-40 left-1/2 w-80 h-80 bg-accent-gold rounded-full mix-blend-multiply filter blur-xl opacity-8 animate-pulse" style={{animationDelay: '2s'}}></div>
+        {/* Subtle secondary accent */}
+        <div className="absolute top-1/3 right-1/4 w-60 h-60 bg-secondary rounded-full mix-blend-multiply filter blur-2xl opacity-5 animate-pulse" style={{animationDelay: '3s'}}></div>
       </div>
     </div>
   );
